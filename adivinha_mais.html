@@ -1,0 +1,79 @@
+<meta charset="UTF-8">
+
+<input>
+<button>Digite o número</button>
+
+<script>
+
+function sorteia (){
+    return Math.round(Math.random() * 10);
+
+}
+
+//var segredos = [5, 7, 10, 2]; //posso colocar o array [] e na linha de baixo, uma outra opção é colocar segredos.push() e colocar o número que quero dentro. Ou também dentro da () colocar Math.round(Math.random() * 10)
+
+function sorteiaNumeros(quantidade){
+
+    var segredos = [];
+    var numero = 1;
+    while ( numero <= quantidade){
+        var numeroAleatorio = sorteia();
+    if (numeroAleatorio !== 0){
+        var achou = false
+
+for (var posicao = 0; posicao < segredos.length; posicao++){
+
+    if (segredos [posicao] == numeroAleatorio){
+        achou = true;
+        break;
+
+    }
+
+}
+
+if (achou == false){
+    segredos.push(numeroAleatorio);
+    numero++;
+}
+
+
+    }
+
+         
+        
+           
+
+    } 
+
+
+    }
+
+
+var segredos = sorteiaNumeros();
+
+var input = document.querySelector("input");
+
+function verifica() {
+    var achou = false;
+    for (var posicao = 0; posicao < segredos.length; posicao++){
+        
+        if (input.value == segredos[posicao]){
+
+            alert ("Acertou");
+            achou = true;
+            break;
+        }
+          
+    }
+    if (achou == false){
+    alert ("Errou!");
+    }
+    input.value = "";
+    input.focus();
+}
+
+var button = document.querySelector("button");
+
+button.onclick = verifica;
+
+</script>

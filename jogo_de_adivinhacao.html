@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+
+<script>
+
+	function pulaLinha() {
+			
+		document.write("<br><br><br>");
+
+	}
+
+	
+	function mostra(frase){
+
+		document.write(frase);
+		
+		pulaLinha();
+
+	}
+
+	
+
+	var numeroPensado = prompt("Digite um valor para ser adivinhado", (Math.round(Math.random() * 10)));	
+
+	//var numeroPensado = prompt(Math.round(Math.random() * 10));
+		
+
+	var chute = parseInt(prompt( "Digite seu chute" ));
+
+	if( chute == numeroPensado){
+		mostra ( "Você acertou!" );
+
+	}
+	else {
+		mostra ( "Você errou, o número pensado foi " + numeroPensado );
+
+	}
+
+</script>
